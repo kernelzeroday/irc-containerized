@@ -1,0 +1,7 @@
+version: '3'
+services:
+  sketchy-irc:
+    image: debian:12
+    volumes:
+      - ./scripts:/scripts
+    command: /bin/bash -lc "apt-get update && apt-get install -y netcat-openbsd tor irssi proxychains-ng tmux && sh '/scripts/start.sh'"
